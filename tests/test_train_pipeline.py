@@ -2,9 +2,9 @@ import sys
 import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.components.data_ingestion import DataIngestion
+from src.pipeline.train_pipeline import TrainingPipeline
 
 if __name__ == '__main__':
-    data_ingestion = DataIngestion()
-    data_ingestion.initiate_data_ingestion()
-    print("Data ingestion process finished.")
+    print('Testing Training Pipeline')
+    TrainingPipeline().run_pipeline()
+    print('Training pipeline test completed successfully.')

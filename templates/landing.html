@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing Classifier</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: linear-gradient(to right, #74ebd5, #9face6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 400px;
+        }
+        h2 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .btn {
+            display: block;
+            margin: 15px auto;
+            padding: 12px 24px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 16px;
+            width: 80%;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Choose Prediction Method</h2>
+        <a href="/csv_check" class="btn">📁 Upload CSV File</a>
+        <a href="/url-check" class="btn">🌐 Check Website URL</a>
+    </div>
+</body>
+</html>

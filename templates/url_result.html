@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Prediction Result</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; padding: 40px; }
+        .container { background: white; padding: 30px; border-radius: 8px; max-width: 500px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; }
+        h2 { color: #333; }
+        .result { font-size: 24px; margin-top: 20px; color: #007BFF; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Prediction Result</h2>
+        <p><strong>URL:</strong> {{ url }}</p>
+        <p class="result">🔍 {{ result.upper() }}</p>
+    </div>
+</body>
+</html>
