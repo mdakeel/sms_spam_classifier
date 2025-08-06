@@ -1,11 +1,8 @@
-.env
-__pychache__/
+.venv
 *.csv
 *.h5
-*.ipynb_checkpoints
 *.npy
 *.pdb
-*.pyc 
 *.pyd
 *.pyo
 *.tar
