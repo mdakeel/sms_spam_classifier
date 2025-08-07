@@ -7,6 +7,7 @@ from typing import Dict, Tuple
 from src.constant import *
 from src.exception import CustomException
 from src.logger import logging
+import joblib
 
 class MainUtils:
     def __init__(self) -> None:
@@ -51,34 +52,9 @@ class MainUtils:
         
         try:
             with open(file_path, 'rb') as file_obj:
-                obj = pickle.load(file_obj)
+                obj = joblib.load(file_obj)
             logging.info(f'Successfully loaded object from {file_path}')
             return obj
         except Exception as e:
             logging.error(f'Faild to load object from {file_path}')
             raise CustomException(e, sys) from e
-    
-    @staticmethod
-    def identify_feature_types(df: pd.DataFrame):
-        data_types = df.dtypes
-         
-        categorical_features = []
-        continuous_features = []
-        discreate_features = []
-         
-        for column, dtype in dict(data_types).items():
-            unique_values = df[column].nunique()
-            
-            if dtype == 'object' or unique_values < 10: #consider features with less than 10 unique values as categorical
-                categorical_features.append(column)
-            elif dtype in [np.int64, np.float64]: #consider features with numeric data types as continuous or discrete
-                if unique_values > 20: #consider features with more than 20 unique values as continues
-                    continuous_features.append(column)
-                else: 
-                    discreate_features.append(column)
-            else:
-                #handle other data types if needed
-                pass
-        return categorical_features, continuous_features, discreate_features
-             
-         
